@@ -1,0 +1,20 @@
+<hibernate-configuration>
+<session-factory>
+<!--  JDBC connection settings - EDIT THESE to match your MySQL  -->
+<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/worknestlocal_db?useSSL=false&amp;serverTimezone=UTC</property><property name="connection.username">root</property>
+<property name="connection.password">root</property>
+<!--  SQL dialect  -->
+<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+<!--  Echo all executed SQL to stdout  -->
+<property name="show_sql">true</property>
+<property name="format_sql">true</property>
+<!--  Automatically create/update database schema.
+         In production, set to 'validate' or remove.  -->
+<property name="hbm2ddl.auto">update</property>
+<!--  Mapping annotated classes  -->
+<mapping class="com.worknestapp.model.User"/>
+<mapping class="com.worknestapp.model.Task"/>
+<mapping class="com.worknestapp.model.Comment"/>
+</session-factory>
+</hibernate-configuration>
